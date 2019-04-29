@@ -382,7 +382,7 @@ span.salam {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: "name email" "msg msg";
+  grid-template-areas: "name email" "msg msg" "mybtn mybtn";
   grid-gap: 10px;
   text-align: center;
 }
@@ -414,9 +414,17 @@ span.salam {
   border-radius: 50%;
   height: 100px;
   width: 100px;
-  border: none;
+  border: 1px solid;
+  background: transparent;
+  margin: 0 auto;
+  color: #fff;
+  grid-area: mybtn;
+  cursor: pointer;
+  box-shadow: 1px 4px 14px 1px;
 }
-
+#status{
+  text-align: center;
+}
 .btn,
 .btn-dark,
 .btn-light {
