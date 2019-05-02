@@ -33,6 +33,7 @@ body {
   background: var(--main-bg-color);
   overflow-y: scroll;
   overflow-x: hidden;
+  transition: all 0.5sec ease-out;
 }
 body.light-mode {
   background: var(--bg-gradient);
