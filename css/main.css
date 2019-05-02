@@ -17,7 +17,7 @@
   --black: #000;
   --orange: #ff8a00;
   --pink: #da1b60;
-  --bg-gradient: linear-gradient(to right, #764ba2, #667eea);
+  --bg-gradient: linear-gradient(to right, #03A9F4, #3F51B5);
 }
 
 html {
@@ -25,7 +25,7 @@ html {
 }
 
 body {
-  font-family: "Exo", sans-serif;
+  font-family: "Exo", sans-serif !important;
   line-height: 1.5;
   height: 100%;
   margin: 0;
@@ -380,17 +380,18 @@ span.salam {
 
 #my_form {
   display: grid;
-  justify-content: center;
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas: "name email" "msg msg" "mybtn mybtn";
-  grid-gap: 10px;
+  grid-gap: 1em;
   text-align: center;
 }
 .name {
   grid-area: name;
+  text-align: right;
 }
 .email {
   grid-area: email;
+  text-align: left;
 }
 .message {
   grid-area: msg;
@@ -403,13 +404,13 @@ span.salam {
   border: 0;
   border-bottom: #8a8a8a solid 2px;
   font-size: 1em;
+  font-family: "Exo", sans-serif !important;
   color: #fff;
-  padding: 5px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  width: 65%;
 }
 
-#m[placeholder] {
-  font-size: 1.5em;
-}
 #mybtn {
   border-radius: 50%;
   height: 100px;
@@ -420,9 +421,10 @@ span.salam {
   color: #fff;
   grid-area: mybtn;
   cursor: pointer;
+  font-family: "Exo", sans-serif !important;
   box-shadow: 1px 4px 14px 1px;
 }
-#status{
+#status {
   text-align: center;
 }
 .btn,
@@ -554,6 +556,7 @@ span.salam {
   .projects {
     grid-template-columns: repeat(3, 1fr);
   }
+
 }
 
 /* Navigation Responsive */
@@ -715,7 +718,30 @@ span.salam {
   .projects {
     grid-template-columns: repeat(2, 1fr);
   }
+  #my_form {
+    grid-template-columns: 1fr;
+    grid-template-areas: "name" "email" "msg" "mybtn";
+    grid-gap: 3em;
+  }
+  .name {
+    text-align: center;
+  }
+  .email {
+    text-align: center;
+  }
+  .message {
+    margin-top: 1em;
+  }
+  #n,
+  #e,
+  #m {
+    width: 80%;
+  }
+  h1.lg-heading, h2.lg-heading, h3.lg-heading {
+    font-size: 4.5rem;
 }
+}
+
 
 @media screen and (max-width: 500px) {
   main {

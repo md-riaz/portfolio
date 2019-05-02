@@ -241,18 +241,21 @@
         </h2>
         <div class="contact_form">
           <form id="my_form" onsubmit="submitForm(); return false;">
-           <div class="name"> <input id="n" placeholder="Name" required /></div>
+            <div class="name"><input id="n" placeholder="Your Name (required)" required /></div>
 
-           <div class="email"><input id="e" placeholder="Email Address" type="email" /></div>
+            <div class="email">
+              <input id="e" placeholder="Your E-mail (required)" type="email" required />
+            </div>
 
-            <div class="message"><textarea
-              id="m"
-              placeholder="Write your message here"
-              rows="2"
-              cols="50%"
-              required
-            ></textarea>
-          </div>
+            <div class="message">
+              <textarea
+                id="m"
+                placeholder="Write your message here"
+                rows="2"
+                cols="50%"
+                required
+              ></textarea>
+            </div>
 
             <input id="mybtn" type="submit" value="Submit Form" />
             <span id="status"></span>
