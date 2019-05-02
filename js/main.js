@@ -61,7 +61,7 @@ function submitForm(){
 	formdata.append( "e", _("e").value );
 	formdata.append( "m", _("m").value );
 	var ajax = new XMLHttpRequest();
-	ajax.open( "POST", "contact.php" );
+	ajax.open( "POST", "../php/contact.php" );
 	ajax.onreadystatechange = function() {
 		if(ajax.readyState == 4 && ajax.status == 200) {
 			if(ajax.responseText == "success"){

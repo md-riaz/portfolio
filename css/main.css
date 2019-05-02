@@ -376,6 +376,7 @@ span.salam {
 /* Contact Form  */
 
 .contact_form {
+  margin-top: 10vh;
 }
 
 #my_form {
@@ -406,9 +407,9 @@ span.salam {
   font-size: 1em;
   font-family: "Exo", sans-serif !important;
   color: #fff;
-  padding-left: 10px;
-  padding-bottom: 10px;
+  padding: 0 0 0.6em 0.6em;
   width: 65%;
+  outline: none;
 }
 
 #mybtn {

@@ -11,12 +11,12 @@
       content="This is a personal portfolio single page website. Do a visit. Thank you."
     />
     <meta property="og:image" content="img/thumbnail.jpg" />
-    <meta property="og:url" content="http://mdriaz.ml" />
+    <meta property="og:url" content="http://riaz.ml" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="fontawesome-free-5.5.0-web/css/all.css" />
     <link rel="stylesheet" href="css/main.css" />
-    <title>Welcome To My Portfolio</title>
+    <title>ᖇ𝕚@ʑ</title>
   </head>
 
   <body>
@@ -101,7 +101,7 @@
         </h2>
 
         <div class="about-info">
-          <img src="img/portrait.jpg" alt="John Doe" class="bio-image" />
+          <img src="img/portrait.jpg" alt="My Picture" class="bio-image" />
 
           <div class="bio">
             <h3 class="text-secondary">BIO😃</h3>
@@ -240,16 +240,31 @@
           This is how you can reach me...
         </h2>
         <div class="contact_form">
-          <form id="my_form" onsubmit="submitForm(); return false;">
-            <div class="name"><input id="n" placeholder="Your Name (required)" required /></div>
+          <form id="my_form" method="post" action="contact_me.php">
+            <!-- onsubmit="submitForm(); return false;" -->
+            <div class="name">
+              <input
+                id="n"
+                name="name"
+                placeholder="Your Name (required)"
+                required
+              />
+            </div>
 
             <div class="email">
-              <input id="e" placeholder="Your E-mail (required)" type="email" required />
+              <input
+                id="e"
+                name="email"
+                placeholder="Your E-mail (required)"
+                type="email"
+                required
+              />
             </div>
 
             <div class="message">
               <textarea
                 id="m"
+                name="message"
                 placeholder="Write your message here"
                 rows="2"
                 cols="50%"
@@ -257,7 +272,7 @@
               ></textarea>
             </div>
 
-            <input id="mybtn" type="submit" value="Submit Form" />
+            <button id="mybtn" type="submit">Send</button>>
             <span id="status"></span>
           </form>
         </div>
