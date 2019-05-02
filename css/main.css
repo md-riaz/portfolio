@@ -425,6 +425,9 @@ span.salam {
   font-family: "Exo", sans-serif !important;
   box-shadow: 1px 4px 14px 1px;
 }
+button#mybtn:hover {
+    background: #f1602b;
+}
 #status {
   text-align: center;
 }
