@@ -240,21 +240,14 @@
           This is how you can reach me...
         </h2>
         <div class="contact_form">
-          <form id="my_form" method="post" action="contact_me.php">
-            <!-- onsubmit="submitForm(); return false;" -->
+          <form id="my_form" onsubmit="submitForm(); return false;">
             <div class="name">
-              <input
-                id="n"
-                name="name"
-                placeholder="Your Name (required)"
-                required
-              />
+              <input id="n" placeholder="Your Name (required)" required />
             </div>
 
             <div class="email">
               <input
                 id="e"
-                name="email"
                 placeholder="Your E-mail (required)"
                 type="email"
                 required
@@ -264,7 +257,6 @@
             <div class="message">
               <textarea
                 id="m"
-                name="message"
                 placeholder="Write your message here"
                 rows="2"
                 cols="50%"

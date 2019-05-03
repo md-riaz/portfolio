@@ -33,7 +33,7 @@ body {
   background: var(--main-bg-color);
   overflow-y: scroll;
   overflow-x: hidden;
-  transition: all 0.5sec ease-out;
+  transition: all 1.5s ease-out;
 }
 body.light-mode {
   background: var(--bg-gradient);
@@ -383,7 +383,7 @@ span.salam {
 #my_form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: "name email" "msg msg" "mybtn mybtn";
+  grid-template-areas: "name email" "msg msg" "mybtn mybtn" "status status";
   grid-gap: 1em;
   text-align: center;
 }
@@ -425,11 +425,18 @@ span.salam {
   cursor: pointer;
   font-family: "Exo", sans-serif !important;
   box-shadow: 1px 4px 14px 1px;
+  outline: none;
 }
 button#mybtn:hover {
     background: #f1602b;
+    transition: background 0.5s ease-out;
+}
+button#mybtn:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 #status {
+  grid-area: status;
   text-align: center;
 }
 .btn,
