@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Riaz - Contact</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="- Responsive HTML5 Portfolio" />
+    <meta
+      name="description"
+      content="This is framwork less animated portfolio site"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mdriaz.ml/" />
+    <meta property="og:title" content="- Responsive HTML5 Portfolio" />
+    <meta
+      property="og:description"
+      content="This is framwork less animated portfolio site"
+    />
+    <meta property="og:image" content="" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://mdriaz.ml/" />
+    <meta property="twitter:title" content="- Responsive HTML5 Portfolio" />
+    <meta
+      property="twitter:description"
+      content="This is framwork less animated portfolio site"
+    />
+    <meta property="twitter:image" content="" />
+    <!-- Splitting CSS -->
+    <link rel="stylesheet" href="../css/splitting.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <section class="container-fluid">
+      <header>
+        <a href="/" class="brand">
+          <img src="../images/logo.png" alt="brand"
+        /></a>
+        <nav class="main-nav">
+          <li><a href="/" title="Work">Work</a></li>
+          <li>
+            <a href="../pages/about.html" title="About">about</a>
+          </li>
+          <li>
+            <a href="../pages/blog.html" title="Blog">blog</a>
+          </li>
+          <li>
+            <a href="../pages/contact.html" title="Contact" class="active"
+              >contact</a
+            >
+          </li>
+        </nav>
+      </header>
+      <main>
+        <section class="container-fluid" id="contact">
+          <div class="content">
+            <div class="intro">
+              <span class="typed">Write me, Please</span>
+            </div>
+            <form
+              id="form"
+              action="../php/mail.php"
+              class="contact-form"
+              method="POST"
+              netlify
+            >
+              <label>What's your name? *</label>
+              <input required="" type="text" name="name" />
+              <label>E-mail address *</label>
+              <input required="" type="email" name="email" />
+              <label>Tell me what's up *</label>
+              <textarea required name="message" rows="8"></textarea>
+              <button id="send" type="submit" class="btn">
+                Send message</button
+              ><span class="p-md">* These fields are required</span>
+              <p class="response"></p>
+            </form>
+          </div>
+        </section>
+      </main>
+    </section>
+    <!-- Typed.js and splitting.js combined-->>
+    <script src="../js/vendors.js"></script>
+    <!-- Main Script-->
+    <script src="../js/main.js"></script>
+  </body>
+</html>

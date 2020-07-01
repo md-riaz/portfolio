@@ -1,79 +1,188 @@
-﻿function _(id) {
-  return document.getElementById(id);
-} //Shortcode function
+"use strict";
+window.onload = (e) => {
+  const MainElements = document.querySelectorAll("main > *");
+  const logo = document.querySelector(".brand img");
+  const navLinks = document.querySelectorAll("nav > li");
+  const sticky = document.querySelector("#sticky");
+  const stickyHolder = document.querySelector("#sticky-holder");
+  const a = document.querySelectorAll("a");
+  const fsSlides = document.querySelectorAll(".portfolio_slider_images li");
+  const fsSlidesLinks = document.querySelectorAll(
+    ".portfolio_slider_navigation li"
+  );
+  const splitting = document.querySelectorAll("[data-splitting]");
+  const zipEffect = document.querySelectorAll(".zip-it");
+  const typedEl = document.querySelector(".typed");
+  const form = document.querySelector("#form");
+  const Anchordelay = 500; // in milliseconds
+  const fsSlideDelay = 3000; // in milliseconds
 
-// Select DOM Items
-const menuBtn = document.querySelector(".menu-btn");
-const menu = document.querySelector(".menu");
-const menuNav = document.querySelector(".menu-nav");
-const menuBranding = document.querySelector(".menu-branding");
-const navItems = document.querySelectorAll(".nav-item");
-
-// Set Initial State Of Menu
-let showMenu = false;
-
-menuBtn.addEventListener("click", toggleMenu);
-
-function toggleMenu() {
-  if (!showMenu) {
-    menuBtn.classList.add("close");
-    menu.classList.add("show");
-    menuNav.classList.add("show");
-    menuBranding.classList.add("show");
-    navItems.forEach(item => item.classList.add("show"));
-
-    // Set Menu State
-    showMenu = true;
-  } else {
-    menuBtn.classList.remove("close");
-    menu.classList.remove("show");
-    menuNav.classList.remove("show");
-    menuBranding.classList.remove("show");
-    navItems.forEach(item => item.classList.remove("show"));
-
-    // Set Menu State
-    showMenu = false;
+  if (splitting.length) {
+    Splitting();
   }
-}
+  /* =========================
+  Default state on page load
+ ============================= */
+  logo.style.transform = "scale(1)";
+  [...MainElements].forEach((el) => {
+    el.style.opacity = 1;
+  });
+  [...navLinks].forEach((el) => {
+    el.style.transform = "matrix(1, 0, 0, 1, 0, 0)";
+    el.style.opacity = 1;
+  });
 
-//for loading check storage
-var checked = JSON.parse(sessionStorage.getItem("change-theme"));
-_("change-theme").checked = checked;
-//
-if (JSON.parse(sessionStorage.getItem("dark-theme-enabled"))) {
-  document.body.classList.add("light-mode");
-}
+  /* =========================
+ Work page slider animation
+============================= */
+  // Only trigger the fullscreen portfolio function when it's available
+  if (fsSlides.length) {
+    // set first element as active
+    [...fsSlides][0].classList.add("active");
+    [...fsSlidesLinks][0].classList.add("active");
+    setInterval(() => {
+      [...zipEffect][0].classList.add("animate");
+    }, 1);
+    // start image counting
+    let CurrentImg = 1;
 
-//click on theme change
-_("change-theme").addEventListener("click", function() {
-  //setting checkbox active status
-  var checkbox = _("change-theme");
-  sessionStorage.setItem("change-theme", checkbox.checked);
-  //theme changing with light mode
-  let darkThemeEnabled = document.body.classList.toggle("light-mode");
-  sessionStorage.setItem("dark-theme-enabled", darkThemeEnabled);
-});
+    // run fsSlide fn on delay time
+    setInterval(() => {
+      fsSlide(CurrentImg);
+      CurrentImg++;
+      if (
+        CurrentImg === [...fsSlides].length &&
+        CurrentImg === [...fsSlidesLinks].length
+      ) {
+        CurrentImg = 0;
+      }
+    }, fsSlideDelay);
+    // slider class toogle
+    function fsSlide(CurrentImg) {
+      // remove all active class
+      [...fsSlides].forEach((el) => {
+        el.classList.remove("active");
+      });
+      [...fsSlidesLinks].forEach((el) => {
+        el.classList.remove("active");
+      });
+      [...zipEffect].forEach((el) => {
+        el.classList.remove("animate");
+      });
 
-// ajax form submit
-function submitForm() {
-  _("mybtn").disabled = true;
-  _("status").innerHTML = "please wait ...";
-  var formdata = new FormData();
-  formdata.append("n", _("n").value);
-  formdata.append("e", _("e").value);
-  formdata.append("m", _("m").value);
-  var ajax = new XMLHttpRequest();
-  ajax.open("POST", "../php/contact.php");
-  ajax.onreadystatechange = function() {
-    if (ajax.readyState == 4 && ajax.status == 200) {
-      if (ajax.responseText == "success") {
-        _("my_form").innerHTML =
-          "<h2>Thanks " + _("n").value + ", your message has been sent.</h2>";
+      // add class on current item
+      [...fsSlides][CurrentImg].classList.add("active");
+      [...fsSlidesLinks][CurrentImg].classList.add("active");
+
+      setInterval(() => {
+        [...zipEffect][CurrentImg].classList.add("animate");
+      }, 1);
+    }
+  }
+
+  /* ===================================
+  On Scroll Animation in about page
+ ======================================= */
+  window.onscroll = function () {
+    stickyAnim();
+  };
+  function stickyAnim() {
+    if (sticky) {
+      const stickyPos = sticky.offsetTop;
+      let stickyLimit =
+        stickyHolder.offsetTop +
+        stickyHolder.scrollHeight -
+        sticky.offsetHeight;
+
+      if (
+        window.pageYOffset > stickyPos &&
+        window.pageYOffset > stickyHolder.offsetTop - 30 &&
+        window.pageYOffset <= stickyLimit
+      ) {
+        sticky.style.top = 0;
+        sticky.classList.add("sticky");
       } else {
-        _("status").innerHTML = ajax.responseText;
-        _("mybtn").disabled = false;
+        sticky.classList.remove("sticky");
       }
     }
-  };
-  ajax.send(formdata);
-}
+  }
+
+  /* =========================
+    Anchor tag click delay
+============================= */
+
+  [...a].forEach((elm) => {
+    let href = elm.getAttribute("href");
+    if (href != "#") {
+      elm.addEventListener("click", (e) => {
+        e.preventDefault();
+        // main elements opacity and logo scale
+        logo.style.transform = "scale(0)";
+        logo.style.transitionDelay = "0s";
+
+        [...MainElements].forEach((el) => {
+          el.style.opacity = 0;
+        });
+        // Nav links transition
+        [...navLinks].forEach((el) => {
+          el.style.transform = "matrix(1, 0, 0, 1, -50, -15)";
+          el.style.opacity = 0;
+        });
+        // go to href page after delay
+        setInterval(() => {
+          window.location = href;
+        }, Anchordelay);
+      });
+    }
+  });
+
+  /* =========================
+    Typed js animation
+============================= */
+  if (typedEl) {
+    var typed = new Typed(typedEl, {
+      strings: ["Write me, Please", "Hola", "こんにちは", "Aloha", "Ciao"],
+      typeSpeed: 0,
+      backSpeed: 50,
+      smartBackspace: true, // this is a default
+      loop: true,
+    });
+  }
+
+  /* =========================
+    form submit
+============================= */
+  if (form) {
+    form.addEventListener("submit", handleForm);
+    function handleForm(ev) {
+      ev.preventDefault(); //stop the page reloading
+      let formData = new FormData(form);
+
+      //add more things that were not in the form
+      // formData.append("api-key", "myApiKey");
+
+      // look at all the contents
+      for (let key of formData.keys()) {
+        console.log(key, formData.get(key));
+      }
+
+      //send the request with formData
+      let url = form.getAttribute("action");
+      let method = form.getAttribute("method");
+      let req = new Request(url, {
+        body: formData,
+        method: method,
+      });
+
+      fetch(req)
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          console.log("response from server", data);
+          document.querySelector(".response").innerHTML = data;
+        })
+        .catch(console.warn);
+    }
+  }
+};
