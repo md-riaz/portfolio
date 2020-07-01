@@ -1,386 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Riaz - Works</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="- Responsive HTML5 Portfolio" />
+    <meta
+      name="description"
+      content="This is framwork less animated portfolio site"
+    />
 
-<head>
-  <!-- HTML Meta Tags -->
-  <meta charset="UTF-8" />
-  <title>Portfolio v2</title>
-  <meta name="description"
-    content="This is my Personal Portfolio. Fully Coded by me. I will be happy if you visit. Thank you." />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mdriaz.ml/" />
+    <meta property="og:title" content="- Responsive HTML5 Portfolio" />
+    <meta
+      property="og:description"
+      content="This is framwork less animated portfolio site"
+    />
+    <meta property="og:image" content="" />
 
-  <!-- Google / Search Engine Tags -->
-  <meta itemprop="name" content="Portfolio v2" />
-  <meta itemprop="description"
-    content="This is my Personal Portfolio. Fully Coded by me. I will be happy if you visit. Thank you." />
-  <meta itemprop="image" content="img/favicon.png" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://mdriaz.ml/" />
+    <meta property="twitter:title" content="- Responsive HTML5 Portfolio" />
+    <meta
+      property="twitter:description"
+      content="This is framwork less animated portfolio site"
+    />
+    <meta property="twitter:image" content="" />
 
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="http://riaz.ml" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Portfolio v2" />
-  <meta property="og:description"
-    content="This is my Personal Portfolio. Fully Coded by me. I will be happy if you visit. Thank you." />
-  <meta property="og:image" content="img/favicon.png" />
+    <!-- Splitting CSS -->
+    <link rel="stylesheet" href="css/splitting.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section class="container-fluid flex">
+      <header>
+        <a href="/" class="brand"> <img src="images/logo.png" alt="brand" /></a>
+        <nav class="main-nav">
+          <li><a href="/" title="Work" class="active">Work</a></li>
+          <li><a href="pages/about.html" title="About">about</a></li>
+          <li><a href="pages/blog.html" title="Blog">blog</a></li>
+          <li><a href="pages/contact.html" title="Contact">contact</a></li>
+        </nav>
+      </header>
+      <main class="flex-grow-1">
+        <section class="portfolio_slider">
+          <ul class="portfolio_slider_images">
+            <li style="background-image: url(images/portfolio/wake-up.jpg);">
+              <h1 class="zip-it" data-splitting>Wakey wake</h1>
+            </li>
+            <li style="background-image: url(images/portfolio/blue-bag.jpg);">
+              <h1 class="zip-it" data-splitting>Saints Bag</h1>
+            </li>
+            <li style="background-image: url(images/portfolio/face-side.jpg);">
+              <h1 class="zip-it" data-splitting>67 Jewelry</h1>
+            </li>
+            <li
+              style="background-image: url(images/portfolio/yellow-book.jpg);"
+            >
+              <h1 class="zip-it" data-splitting>Nasty Paper</h1>
+            </li>
+            <li style="background-image: url(images/portfolio/vui.jpg);">
+              <h1 class="zip-it" data-splitting>Pluch</h1>
+            </li>
 
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Portfolio v2" />
-  <meta name="twitter:description"
-    content="This is my Personal Portfolio. Fully Coded by me. I will be happy if you visit. Thank you." />
-  <meta name="twitter:image" content="img/favicon.png" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" as="style"
-    onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
-  </noscript>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-
-<body>
-  <!-- Loader screen -->
-  <div class="open">
-    <div class="layer"></div>
-    <div class="layer"></div>
-  </div>
-
-  <div id="progress"></div>
-  <aside id="aside">
-    <header class="brand">
-      <img src="img/me-small.jpg" alt="Person" />
-      <p class="name">
-        MD Riaz
-      </p>
-      <p class="sub_name">
-        WEB Designer <br />
-        (Student)
-      </p>
-    </header>
-    <nav class="nav">
-      <a href="#home" class="nav_items ">Home &#187;</a>
-      <a href="#works" class="nav_items">My Works &#187;</a>
-      <a href="#about" class="nav_items">About Me &#187;</a>
-      <a href="#skills" class="nav_items">Skills &#187;</a>
-      <a target="_blank" href="blog/" class="nav_items">Blog &#187;</a>
-      <a href="#contact" class="nav_items">Contact &#187;</a>
-      <label class="switch">
-        <input type="checkbox" id="change-theme" />
-        <span class="slider round"></span>
-      </label>
-    </nav>
-    <div class="social">
-      <div class="fb">
-        <a href="https://www.facebook.com/mdriaz.70" target="_blank">
-          <i class="fab fa-facebook-square fa-sm"></i></a>
-      </div>
-      <div class="github">
-        <a href="https://github.com/md-riaz" target="_blank">
-          <i class="fab fa-github fa-sm"></i></a>
-      </div>
-      <div class="mail">
-        <a href="mailto:bpimdriaz@gmail.com?subject=Feedback about your site"><i class="fas fa-at fa-sm"></i></a>
-      </div>
-      <div class="codepen">
-        <a href="https://codepen.io/md-riaz" target="_blank"><i class="fab fa-codepen"></i></a>
-      </div>
-    </div>
-  </aside>
-  <div class="nav-icon">
-    <div></div>
-  </div>
-  <main id="main">
-    <section id="home">
-      <div class="hire">
-        <a href="https://m.me/mdriaz.70" target="_blank">
-          Hire me
-        </a>
-      </div>
-      <div class="title">
-        <img src="img/logo.svg" data-src="img/logo.svg" alt="logo" /> <br />
-        <div id="typed-strings">
-          <p>I am a Web Designer.</p>
-          <p>I am a Web Developer.</p>
-          <p>I am a Illustrator Cartoonist.</p>
-        </div>
-        <p class="auto_type"></p>
-        <br />
-        <a class="contact_btn" href="#contact">Contact me</a>
-      </div>
+            <li style="background-image: url(images/portfolio/logo-a.jpg);">
+              <h1 class="zip-it" data-splitting>Vpside down</h1>
+            </li>
+          </ul>
+          <ul class="portfolio_slider_navigation">
+            <li><a href="pages/work-single.html">Wakey wake</a></li>
+            <li><a href="pages/work-single.html">Saints Bag</a></li>
+            <li><a href="pages/work-single.html">67 Jewelry</a></li>
+            <li><a href="pages/work-single.html">Nasty Paper</a></li>
+            <li><a href="pages/work-single.html">Pluch</a></li>
+            <li><a href="pages/work-single.html">Vpside down</a></li>
+          </ul>
+        </section>
+      </main>
     </section>
-
-    <section id="works">
-      <h2 class="title">
-        I Build <span>Web apps</span> & <span>Websites.</span>
-      </h2>
-      <div class="projects">
-        <div class="item">
-          <img src="img/projects/project1.jpg" alt="Project" />
-          <div class="caption">
-            <p><span>Photobook:</span> Purely codded in HTML & CSS.</p>
-            <a target="_blank" href="https://github.com/md-riaz/photobook" class="download">
-              <i class="fas fa-download"></i>
-            </a>
-            <a target="_blank" href="https://md-riaz.github.io/photobook/" class="preview">
-              <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="img/projects/project2.jpg" alt="Project" />
-          <div class="caption">
-            <p>
-              <span>DESIGN:</span> A Smart Looking Style Codded in HTML CSS.
-            </p>
-            <a target="_blank" href="https://github.com/md-riaz/design" class="download">
-              <i class="fas fa-download"></i>
-            </a>
-            <a target="_blank" href="https://md-riaz.github.io/design/" class="preview">
-              <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="img/projects/project3.jpg" alt="Project" />
-          <div class="caption">
-            <p><span>E-congigure:</span> Stylis Design Codded in HTML CSS.</p>
-            <a target="_blank" href="https://github.com/md-riaz/e-configure" class="download">
-              <i class="fas fa-download"></i>
-            </a>
-            <a target="_blank" href="https://md-riaz.github.io/e-configure/" class="preview">
-              <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="img/projects/project4.jpg" alt="Project" />
-          <div class="caption">
-            <p><span>Learning HTML:</span> Demo Page Codded in HTML CSS.</p>
-            <a target="_blank" href="https://github.com/md-riaz/learnhtml" class="download">
-              <i class="fas fa-download"></i>
-            </a>
-            <a target="_blank" href="https://md-riaz.github.io/learnhtml/" class="preview">
-              <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="img/projects/project5.jpg" alt="Project" />
-          <div class="caption">
-            <p>
-              <span>Collage Canteen:</span> Canteen info Codded in HTML CSS
-              PHP.
-            </p>
-            <a target="_blank" href="https://github.com/md-riaz/bpi-canteen" class="download">
-              <i class="fas fa-download"></i>
-            </a>
-            <a target="_blank" href="http://bpi.riaz.ml" class="preview">
-              <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="img/projects/project6.jpg" alt="Project" />
-          <div class="caption">
-            <p>
-              <span>Portfolio V1:</span> This was the first version of my
-              portfolio.
-            </p>
-            <a target="_blank" href="https://github.com/md-riaz/portfolio" class="download">
-              <i class="fas fa-download"></i>
-            </a>
-            <a target="_blank" href="http://riaz.ml/v1/" class="preview">
-              <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="img/projects/project7.jpg" alt="Project" />
-          <div class="caption">
-            <p><span>File Uploader:</span> Upload file by Ajax.</p>
-            <a target="_blank" href="https://github.com/md-riaz/UploadFilesbyPHP" class="download">
-              <i class="fas fa-download"></i>
-            </a>
-            <a target="_blank" href="http://up.riaz.ml" class="preview">
-              <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="item">
-          <img src="img/projects/project8.jpg" alt="Project" />
-          <div class="caption">
-            <p><span>Boo:</span> A Bootstrap mobile responsive Template</p>
-            <a target="_blank" href="https://github.com/md-riaz/Boo" class="download">
-              <i class="fas fa-download"></i>
-            </a>
-            <a target="_blank" href="https://md-riaz.github.io/Boo/" class="preview">
-              <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <h2 class="title"><span>A</span>bout <span>Me 😎</span></h2>
-      <h3 class="title_sub">Let me <span>tell</span> you a few things...</h3>
-      <div class="about-info">
-        <img src="img/me-large.jpg" alt="MD Riaz" class="bio-image" />
-
-        <div class="bio">
-          <span>BIO 😏</span>
-          <p>
-            HI, My name is <span>MD RIAZ</span>. I am 20 years old. I read in
-            Bogura Polytechnic Institute in Computer Technology. I can turn
-            your design into a static HTML website. I can also create vector
-            portraits😍.
-          </p>
-        </div>
-
-        <div class="job-1">
-          <h3>Computer Engineer</h3>
-          <h6>Bogura Polytechnic Institute</h6>
-          <p>
-            I have Passed Diploma from Bogura Polytechnic Institute in 2020.
-            It is No.1 Polytechnic Institute in bangladesh.
-          </p>
-        </div>
-
-        <div class="job-2">
-          <h3>Database Programming</h3>
-          <h6>Certified by BTEB</h6>
-          <p>
-            A certificate by The Bangladesh Technical Education Board on
-            Database programming for students.
-          </p>
-        </div>
-
-        <div class="job-3">
-          <h3>Computer operation</h3>
-          <h6>Certified by Govt.</h6>
-          <p>
-            I have achived Computer Operation Level 1 Certificate. This is an
-            International Certificate for students on computer basics & MS
-            office Application.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <h2 class="title">My <span>skills</span> in varios fields...</h2>
-      <div class="skill_progress">
-        <div class="skillbar clearfix " data-percent="80%">
-          <div class="skillbar-title" style="background: #d35400;">
-            <span>HTML5</span>
-          </div>
-          <div class="skillbar-bar" style="background: #e67e22;"></div>
-          <div class="skill-bar-percent">80%</div>
-        </div>
-        <!-- End Skill Bar -->
-
-        <div class="skillbar clearfix " data-percent="70%">
-          <div class="skillbar-title" style="background: #2980b9;">
-            <span>CSS3</span>
-          </div>
-          <div class="skillbar-bar" style="background: #3498db;"></div>
-          <div class="skill-bar-percent">70%</div>
-        </div>
-        <!-- End Skill Bar -->
-
-        <div class="skillbar clearfix " data-percent="20%">
-          <div class="skillbar-title" style="background: #2c3e50;">
-            <span>jQuery</span>
-          </div>
-          <div class="skillbar-bar" style="background: #2c3e50;"></div>
-          <div class="skill-bar-percent">20%</div>
-        </div>
-        <!-- End Skill Bar -->
-
-        <div class="skillbar clearfix " data-percent="30%">
-          <div class="skillbar-title" style="background: #46465e;">
-            <span>Javascript</span>
-          </div>
-          <div class="skillbar-bar" style="background: #5a68a5;"></div>
-          <div class="skill-bar-percent">30%</div>
-        </div>
-        <!-- End Skill Bar -->
-
-        <div class="skillbar clearfix " data-percent="25%">
-          <div class="skillbar-title" style="background: #333333;">
-            <span>PHP</span>
-          </div>
-          <div class="skillbar-bar" style="background: #525252;"></div>
-          <div class="skill-bar-percent">25%</div>
-        </div>
-        <!-- End Skill Bar -->
-
-        <div class="skillbar clearfix " data-percent="60%">
-          <div class="skillbar-title" style="background: #27ae60;">
-            <span>Photoshop</span>
-          </div>
-          <div class="skillbar-bar" style="background: #2ecc71;"></div>
-          <div class="skill-bar-percent">60%</div>
-        </div>
-        <!-- End Skill Bar -->
-
-        <div class="skillbar clearfix " data-percent="40%">
-          <div class="skillbar-title" style="background: #124e8c;">
-            <span>Illustrator</span>
-          </div>
-          <div class="skillbar-bar" style="background: #4288d0;"></div>
-          <div class="skill-bar-percent">40%</div>
-        </div>
-        <!-- End Skill Bar -->
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2 class="title">
-        <span>Contact</span> me by submitting this <span> Form</span>
-      </h2>
-
-      <form action="php/contact_me.php" method="post" id="my_form">
-        <div class="name">
-          <input type="text" name="name" id="n" placeholder="Your Name (required)" />
-        </div>
-        <div class="email">
-          <input type="email" name="email" id="e" placeholder="Your E-mail (required)" />
-        </div>
-        <div class="message">
-          <textarea name="message" placeholder="Write your message here" rows="2" cols="50%" required id="m"></textarea>
-        </div>
-        <button type="submit" name="submit" class="mybtn">
-          <span class="front">Submit Form</span>
-          <span class="center"></span>
-          <span class="back">Wait...</span>
-        </button>
-      </form>
-    </section>
-    <div id="snackbar">Thank you for messeging.</div>
-  </main>
-
-  <footer id="main-footer">
-    Copyright &copy;
-    <script>
-      document.write(new Date().getFullYear());
-    </script>
-  </footer>
-  <!-- partial -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/superplaceholder/1.0.0/superplaceholder.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
-  <script src="js/jquery.progress.js"></script>
-  <script src="js/script.js"></script>
-</body>
-
+    <!-- Typed.js and splitting.js combined-->
+    <script src="js/vendors.js"></script>
+    <!-- Main Script-->
+    <script src="js/main.js"></script>
+  </body>
 </html>
