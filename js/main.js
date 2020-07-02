@@ -11,7 +11,7 @@ window.onload = (e) => {
     ".portfolio_slider_navigation li"
   );
   const splitting = document.querySelectorAll("[data-splitting]");
-  const zipEffect = document.querySelectorAll(".zip-it");
+  const slideHorizontal = document.querySelectorAll(".slide-horizontal");
   const typedEl = document.querySelector(".typed");
   const form = document.querySelector("#form");
   const Anchordelay = 500; // in milliseconds
@@ -41,8 +41,8 @@ window.onload = (e) => {
     [...fsSlides][0].classList.add("active");
     [...fsSlidesLinks][0].classList.add("active");
     setInterval(() => {
-      [...zipEffect][0].classList.add("animate");
-    }, 10);
+      [...slideHorizontal][0].classList.add("animate");
+    }, 100);
     // start image counting
     let CurrentImg = 1;
 
@@ -66,7 +66,7 @@ window.onload = (e) => {
       [...fsSlidesLinks].forEach((el) => {
         el.classList.remove("active");
       });
-      [...zipEffect].forEach((el) => {
+      [...slideHorizontal].forEach((el) => {
         el.classList.remove("animate");
       });
 
@@ -75,7 +75,7 @@ window.onload = (e) => {
       [...fsSlidesLinks][CurrentImg].classList.add("active");
 
       setInterval(() => {
-        [...zipEffect][CurrentImg].classList.add("animate");
+        [...slideHorizontal][CurrentImg].classList.add("animate");
       }, 1);
     }
   }

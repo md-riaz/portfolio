@@ -81,9 +81,7 @@ p {
   max-width: 100%;
   margin-bottom: 20px;
 }
-.flex-grow-1 {
-  flex-grow: 1;
-}
+
 .mt-xl {
   margin-top: 150px;
 }
@@ -186,19 +184,32 @@ nav.main-nav {
   }
 }
 /* Portfolio / Works */
-section.portfolio_slider {
-  height: calc(100% - 20px);
-  margin: 20px 15px 0;
-  .portfolio_slider_images {
+.portfolio_slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 200px 20px 60px;
+
+  &_images {
     height: 100%;
     padding-bottom: 60px;
     li {
+      height: 100%;
+      opacity: 0;
+      display: none;
+      transition: opacity 1s ease-in;
+      align-items: center;
+      align-content: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background-size: cover;
       background-position: center center;
-      height: 100%;
-      display: none;
-      opacity: 0;
-      transition: opacity 1s ease-in;
+      text-align: center;
       &.active {
         display: flex;
         animation-name: fadeIn;
@@ -234,14 +245,16 @@ section.portfolio_slider {
       }
     }
   }
-  .portfolio_slider_navigation {
-    margin-top: -60px;
-    height: 60px;
-    width: 100%;
+  &_navigation {
     text-align: center;
     white-space: nowrap;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    height: 60px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
 
     @media #{$tablet} {
       overflow: hidden;
@@ -285,7 +298,7 @@ section.portfolio_slider {
   }
 }
 /*------- About Page -------*/
-section.container-fluid {
+#about {
   .content {
     a {
       text-decoration: underline;
@@ -592,43 +605,30 @@ nav > li {
 
 /* splliting js animation */
 
-.zip-it {
+.slide-horizontal {
   .char {
-    color: var(--clr-black);
-    &,
-    &::before,
-    &::after {
-      transition: transform 0.8s cubic-bezier(0.75, 0, 0.25, 1);
-      transition-delay: calc(0.5s * (1 - var(--char-percent)));
-    }
-    &::before,
-    &::after {
+    overflow: hidden;
+    color: transparent;
+
+    &:before,
+    &:after {
       visibility: visible;
       color: var(--clr-white);
+      transition: transform 0.5s cubic-bezier(0.9, 0, 0.2, 1);
+      transition-delay: calc(0.2s + (0.02s * (var(--char-index))));
     }
-    &::before {
-      clip-path: polygon(0 0, 100% 0, 100% 54%, 0 54%);
+
+    &:before {
+      color: var(--clr-black);
+      transform: translateX(110%);
     }
-    &::after {
-      clip-path: polygon(0 46%, 100% 46%, 100% 100%, 0 100%);
-    }
-  }
-  &:hover .char::before,
-  &.animate .char::before {
-    transform: translateY(-45%) scaleY(0);
-  }
-  &:hover .char::after,
-  &.animate .char::after {
-    transform: translateY(45%) scaleY(0);
   }
 
-  &:hover,
-  &.animate {
-    .char,
-    .char::before,
-    .char::after {
-      transition-delay: calc(0.5s * var(--char-percent));
-    }
+  &.animate .char:before {
+    transform: translateX(0%);
+  }
+  &.animate .char:after {
+    transform: translateX(-110%);
   }
 }
 
