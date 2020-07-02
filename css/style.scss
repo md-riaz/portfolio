@@ -40,7 +40,6 @@ h4,
 h5,
 h6 {
   font-family: inherit;
-  font-weight: 500;
   line-height: 1.1;
   color: inherit;
 }
@@ -87,9 +86,6 @@ p {
 }
 .mt-xl {
   margin-top: 150px;
-}
-.p-md {
-  padding: 30px;
 }
 .disabled {
   opacity: 0.6;
@@ -503,16 +499,17 @@ footer .pagination {
 /*------- Contact Page -------*/
 #contact {
   .content {
-@media #{$tablet}{
-max-width: 60%;
+    @media #{$tablet} {
+      max-width: 60%;
     }
-width:100%;
-padding-left:10px;
-padding-right:10px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
     margin: 0 auto;
   }
   .intro {
     text-align: center;
+    margin: 30px 10px;
     .typed,
     .typed-cursor {
       font-family: var(--f-Playfair);
@@ -522,7 +519,7 @@ padding-right:10px;
   }
   form.contact-form {
     margin: 15px;
-    margin-top: 30px;
+    margin-top: 40px;
     label {
       font-family: var(--f-Poppins);
       font-weight: normal;
@@ -569,6 +566,12 @@ padding-right:10px;
     }
     span {
       font-family: var(--f-Playfair);
+      display: block;
+      padding: 10px 5px;
+      @media #{$tablet} {
+        display: inline;
+        padding: 30px;
+      }
     }
   }
   p.response {
