@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:300, 400, 600, 700");
-@import url("https://fonts.googleapis.com/css?family=Playfair+Display");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300, 400, 600, 700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display&display=swap");
 *,
 *::before,
 *::after {
@@ -40,7 +40,6 @@ h4,
 h5,
 h6 {
   font-family: inherit;
-  font-weight: 500;
   line-height: 1.1;
   color: inherit;
 }
@@ -87,9 +86,6 @@ p {
 }
 .mt-xl {
   margin-top: 150px;
-}
-.p-md {
-  padding: 30px;
 }
 .disabled {
   opacity: 0.6;
@@ -503,11 +499,17 @@ footer .pagination {
 /*------- Contact Page -------*/
 #contact {
   .content {
-    max-width: 60%;
+    @media #{$tablet} {
+      max-width: 60%;
+    }
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
     margin: 0 auto;
   }
   .intro {
     text-align: center;
+    margin: 30px 10px;
     .typed,
     .typed-cursor {
       font-family: var(--f-Playfair);
@@ -517,7 +519,7 @@ footer .pagination {
   }
   form.contact-form {
     margin: 15px;
-    margin-top: 30px;
+    margin-top: 40px;
     label {
       font-family: var(--f-Poppins);
       font-weight: normal;
@@ -564,6 +566,12 @@ footer .pagination {
     }
     span {
       font-family: var(--f-Playfair);
+      display: block;
+      padding: 10px 5px;
+      @media #{$tablet} {
+        display: inline;
+        padding: 30px;
+      }
     }
   }
   p.response {
@@ -609,16 +617,12 @@ nav > li {
       clip-path: polygon(0 46%, 100% 46%, 100% 100%, 0 100%);
     }
   }
-
-  &:hover .char:before,
   &.animate .char:before {
     transform: translateY(-45%) scaleY(0);
   }
-  &:hover .char:after,
   &.animate .char:after {
     transform: translateY(45%) scaleY(0);
   }
-  &:hover,
   &.animate {
     .char,
     .char:before,

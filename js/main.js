@@ -141,7 +141,14 @@ window.onload = (e) => {
 ============================= */
   if (typedEl) {
     var typed = new Typed(typedEl, {
-      strings: ["Write me, Please", "Hola", "こんにちは", "Aloha", "Ciao"],
+      strings: [
+        "Hola",
+        "Contact me",
+        "Write me, Please",
+        "こんにちは",
+        "Aloha",
+        "Ciao",
+      ],
       typeSpeed: 0,
       backSpeed: 50,
       smartBackspace: true, // this is a default
