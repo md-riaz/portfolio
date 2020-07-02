@@ -375,10 +375,13 @@ nav.main-nav {
     text-transform: uppercase;
     margin-top: 65px;
     margin-bottom: 10px; }
-  #about .title {
-    text-align: center; }
-    #about .title h4 {
-      font-size: 1.1rem; }
+
+.title {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  .title h4 {
+    font-size: 1.1rem; }
 
 /*------- Blog Page -------*/
 #blogs a.blog-item {
