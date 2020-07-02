@@ -42,7 +42,7 @@ window.onload = (e) => {
     [...fsSlidesLinks][0].classList.add("active");
     setInterval(() => {
       [...zipEffect][0].classList.add("animate");
-    }, 1);
+    }, 10);
     // start image counting
     let CurrentImg = 1;
 
