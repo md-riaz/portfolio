@@ -109,7 +109,7 @@ p {
   margin: 0 auto;
 }
 .columns {
-  --s: 1rem;
+  --s: 0.5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -119,9 +119,6 @@ p {
     width: calc(var(--w, 50%) - 1rem);
     padding-left: calc(var(--s) / 2);
     padding-right: calc(var(--s) / 2);
-    * > {
-      text-align: center;
-    }
   }
 }
 // header

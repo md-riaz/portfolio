@@ -110,7 +110,7 @@ p {
   margin: 0 auto; }
 
 .columns {
-  --s: 1rem;
+  --s: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -125,8 +125,6 @@ p {
     width: calc(var(--w, 50%) - 1rem);
     padding-left: calc(var(--s) / 2);
     padding-right: calc(var(--s) / 2); }
-    .columns .col * > {
-      text-align: center; }
 
 header {
   padding: 20px 0 20px;
