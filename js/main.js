@@ -48,7 +48,7 @@ window.onload = (e) => {
 
     // run fsSlide fn on delay time
     setInterval(() => {
-      fsSlide(CurrentImg);
+      // fsSlide(CurrentImg);
       CurrentImg++;
       if (
         CurrentImg === [...fsSlides].length &&

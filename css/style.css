@@ -262,14 +262,19 @@ nav.main-nav {
     white-space: nowrap;
     height: 60px;
     position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
     margin: 0;
-    padding: 0; }
+    white-space: nowrap;
+    overflow-x: scroll;
+    left: -20px;
+    right: -20px;
+    padding: 0 15px;
+    top: 100%; }
     @media (min-width: 768px) {
       .portfolio_slider_navigation {
-        overflow: hidden; } }
+        overflow: hidden;
+        left: 0;
+        right: 0;
+        padding: 0; } }
     .portfolio_slider_navigation li {
       display: inline-block;
       margin: 0 5px; }
@@ -574,8 +579,11 @@ nav > li {
 /* splliting js animation */
 .slide-horizontal .char {
   overflow: hidden;
-  color: transparent; }
+  color: transparent;
+  -webkit-transform: translateY(18px);
+          transform: translateY(18px); }
   .slide-horizontal .char:before, .slide-horizontal .char:after {
+    top: -18px;
     visibility: visible;
     color: var(--clr-white);
     -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.9, 0, 0.2, 1);

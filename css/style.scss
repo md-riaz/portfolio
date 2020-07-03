@@ -250,14 +250,19 @@ nav.main-nav {
     white-space: nowrap;
     height: 60px;
     position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
     margin: 0;
-    padding: 0;
+    white-space: nowrap;
+    overflow-x: scroll;
+    left: -20px;
+    right: -20px;
+    padding: 0 15px;
 
+    top: 100%;
     @media #{$tablet} {
       overflow: hidden;
+      left: 0;
+      right: 0;
+      padding: 0;
     }
     li {
       display: inline-block;
@@ -610,9 +615,11 @@ nav > li {
   .char {
     overflow: hidden;
     color: transparent;
+    transform: translateY(18px);
 
     &:before,
     &:after {
+      top: -18px;
       visibility: visible;
       color: var(--clr-white);
       transition: transform 0.5s cubic-bezier(0.9, 0, 0.2, 1);
