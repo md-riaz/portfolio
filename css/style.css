@@ -16,7 +16,10 @@
   --clr-nearWhite: #aaa;
   --clr-nearGray: #999;
   --f-Poppins: "Poppins", sans-serif;
-  --f-Playfair: "Playfair Display", serif; }
+  --f-Playfair: "Playfair Display", serif;
+  --shadow: 0 2px 5.3px -23px rgba(0, 0, 0, 0.02),
+    0 6.7px 17.9px -23px rgba(0, 0, 0, 0.024),
+    0 30px 80px -23px rgba(0, 0, 0, 0.07); }
 
 /*------------------------------
     Responsive media Queries
@@ -120,6 +123,10 @@ p {
     width: calc(var(--w, 50%) - 1rem);
     padding-left: calc(var(--s) / 2);
     padding-right: calc(var(--s) / 2); }
+
+.shadow {
+  -webkit-box-shadow: var(--shadow);
+          box-shadow: var(--shadow); }
 
 header {
   padding: 20px 0 20px;
@@ -541,11 +548,16 @@ footer .pagination {
     font-family: var(--f-Poppins);
     padding: 15px 22px 12px;
     font-weight: 700;
-    -webkit-transition: background 0.3s ease-in-out;
-    transition: background 0.3s ease-in-out;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
     cursor: pointer; }
     #contact form.contact-form .btn:hover {
-      background: var(--clr-black-6); }
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+      -webkit-box-shadow: var(--shadow);
+              box-shadow: var(--shadow); }
   #contact form.contact-form span {
     font-family: var(--f-Playfair);
     display: block;
@@ -558,6 +570,23 @@ footer .pagination {
 #contact p.response {
   font-size: 1rem;
   margin: 10px; }
+
+.contact-links {
+  text-align: center;
+  margin: 20px; }
+  .contact-links .contact-link {
+    display: inline-block;
+    margin: 0 10px;
+    -webkit-transition: -webkit-transform 0.2s ease-in-out;
+    transition: -webkit-transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out; }
+    .contact-links .contact-link:hover {
+      -webkit-transform: translateY(-10px);
+              transform: translateY(-10px); }
+  .contact-links .contact-icon svg {
+    width: 30px;
+    height: 30px; }
 
 /* Transition and animation */
 main > * {

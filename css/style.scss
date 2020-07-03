@@ -14,8 +14,13 @@
   --clr-offWhite: #f5f5f5;
   --clr-nearWhite: #aaa;
   --clr-nearGray: #999;
+
   --f-Poppins: "Poppins", sans-serif;
   --f-Playfair: "Playfair Display", serif;
+
+  --shadow: 0 2px 5.3px -23px rgba(0, 0, 0, 0.02),
+    0 6.7px 17.9px -23px rgba(0, 0, 0, 0.024),
+    0 30px 80px -23px rgba(0, 0, 0, 0.07);
 }
 
 /*------------------------------
@@ -118,6 +123,9 @@ p {
     padding-left: calc(var(--s) / 2);
     padding-right: calc(var(--s) / 2);
   }
+}
+.shadow {
+  box-shadow: var(--shadow);
 }
 // header
 header {
@@ -573,10 +581,11 @@ footer .pagination {
       font-family: var(--f-Poppins);
       padding: 15px 22px 12px;
       font-weight: 700;
-      transition: background 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
       cursor: pointer;
       &:hover {
-        background: var(--clr-black-6);
+        transform: scale(1.1);
+        box-shadow: var(--shadow);
       }
     }
     span {
@@ -594,7 +603,22 @@ footer .pagination {
     margin: 10px;
   }
 }
-
+.contact-links {
+  text-align: center;
+  margin: 20px;
+  .contact-link {
+    display: inline-block;
+    margin: 0 10px;
+    transition: transform 0.2s ease-in-out;
+    &:hover {
+      transform: translateY(-10px);
+    }
+  }
+  .contact-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+}
 /* Transition and animation */
 main > * {
   transition: opacity 0.5s ease-out;
