@@ -14,8 +14,13 @@
   --clr-offWhite: #f5f5f5;
   --clr-nearWhite: #aaa;
   --clr-nearGray: #999;
+
   --f-Poppins: "Poppins", sans-serif;
   --f-Playfair: "Playfair Display", serif;
+
+  --shadow: 0 2px 5.3px -23px rgba(0, 0, 0, 0.02),
+    0 6.7px 17.9px -23px rgba(0, 0, 0, 0.024),
+    0 30px 80px -23px rgba(0, 0, 0, 0.07);
 }
 
 /*------------------------------
@@ -39,13 +44,12 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: inherit;
+  font-family: var(--f-Playfair);
   line-height: 1.1;
   color: inherit;
 }
 h1 {
   font-weight: 400;
-  font-family: var(--f-Playfair);
   font-size: 2.9rem;
   line-height: 1.35;
 }
@@ -81,9 +85,7 @@ p {
   max-width: 100%;
   margin-bottom: 20px;
 }
-.flex-grow-1 {
-  flex-grow: 1;
-}
+
 .mt-xl {
   margin-top: 150px;
 }
@@ -109,8 +111,7 @@ p {
   margin: 0 auto;
 }
 .columns {
-  --s: 1rem;
-  width: 100%;
+  --s: 0.5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -120,10 +121,10 @@ p {
     width: calc(var(--w, 50%) - 1rem);
     padding-left: calc(var(--s) / 2);
     padding-right: calc(var(--s) / 2);
-    * > {
-      text-align: center;
-    }
   }
+}
+.shadow {
+  box-shadow: var(--shadow);
 }
 // header
 header {
@@ -190,19 +191,30 @@ nav.main-nav {
   }
 }
 /* Portfolio / Works */
-section.portfolio_slider {
-  height: calc(100% - 20px);
-  margin: 20px 15px 0;
-  .portfolio_slider_images {
-    height: 100%;
+.portfolio_slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 200px 20px 60px;
+
+  &_images {
     padding-bottom: 60px;
     li {
+      opacity: 0;
+      display: none;
+      transition: opacity 1s ease-in;
+      align-items: center;
+      align-content: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background-size: cover;
       background-position: center center;
-      height: 100%;
-      display: none;
-      opacity: 0;
-      transition: opacity 1s ease-in;
+      text-align: center;
       &.active {
         display: flex;
         animation-name: fadeIn;
@@ -238,24 +250,30 @@ section.portfolio_slider {
       }
     }
   }
-  .portfolio_slider_navigation {
-    margin-top: -60px;
-    height: 60px;
-    width: 100%;
+  &_navigation {
     text-align: center;
     white-space: nowrap;
+    height: 60px;
+    position: absolute;
+    margin: 0;
+    white-space: nowrap;
     overflow-x: scroll;
-    overflow-y: hidden;
+    left: -20px;
+    right: -20px;
+    padding: 0 15px;
 
+    top: 100%;
     @media #{$tablet} {
       overflow: hidden;
+      left: 0;
+      right: 0;
+      padding: 0;
     }
     li {
       display: inline-block;
       margin: 0 5px;
 
       a {
-        height: 60px;
         line-height: 60px;
         color: var(--clr-nearWhite);
         font-size: 1rem;
@@ -289,7 +307,7 @@ section.portfolio_slider {
   }
 }
 /*------- About Page -------*/
-section.container-fluid {
+#about {
   .content {
     a {
       text-decoration: underline;
@@ -336,7 +354,6 @@ section.container-fluid {
     margin-top: 40px;
     margin-bottom: 75px;
     font-weight: 400;
-    font-family: var(--f-Playfair);
     line-height: 1.37;
     font-size: 1.5rem;
     @media #{$tablet} {
@@ -377,14 +394,15 @@ section.container-fluid {
     margin-top: 65px;
     margin-bottom: 10px;
   }
-  .title {
-    text-align: center;
-    h4 {
-      font-size: 1.1rem;
-    }
+}
+.title {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  h4 {
+    font-size: 1.1rem;
   }
 }
-
 /*------- Blog Page -------*/
 #blogs {
   a.blog-item {
@@ -395,7 +413,6 @@ section.container-fluid {
     // blogs
     h2 {
       font-size: 1.5rem;
-      font-family: var(--f-Playfair);
       background: var(--clr-white);
       display: inline-block;
       position: relative;
@@ -558,10 +575,11 @@ footer .pagination {
       font-family: var(--f-Poppins);
       padding: 15px 22px 12px;
       font-weight: 700;
-      transition: background 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
       cursor: pointer;
       &:hover {
-        background: var(--clr-black-6);
+        transform: scale(1.1);
+        box-shadow: var(--shadow);
       }
     }
     span {
@@ -579,7 +597,22 @@ footer .pagination {
     margin: 10px;
   }
 }
-
+.contact-links {
+  text-align: center;
+  margin: 20px;
+  .contact-link {
+    display: inline-block;
+    margin: 0 10px;
+    transition: transform 0.2s ease-in-out;
+    &:hover {
+      transform: translateY(-10px);
+    }
+  }
+  .contact-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+}
 /* Transition and animation */
 main > * {
   transition: opacity 0.5s ease-out;
@@ -596,39 +629,17 @@ nav > li {
 
 /* splliting js animation */
 
-.zip-it {
+.slide-in {
+  padding-left: 10px;
+  padding-right: 10px;
+  perspective: 400px;
   .char {
-    color: var(--clr-black);
-    &,
-    &::before,
-    &::after {
-      transition: transform 0.8s cubic-bezier(0.75, 0, 0.25, 1);
-      transition-delay: calc(0.5s * (1 - var(--char-percent)));
-    }
-    &::before,
-    &::after {
-      visibility: visible;
-      color: var(--clr-white);
-    }
-    &::before {
-      clip-path: polygon(0 0, 100% 0, 100% 54%, 0 54%);
-    }
-    &::after {
-      clip-path: polygon(0 46%, 100% 46%, 100% 100%, 0 100%);
-    }
+    transform-origin: 0% 50%;
+    transition: transform 1s ease-out 0.1s;
+    transform: rotateX(40deg) scale(0) translate(-50px, -29px);
   }
-  &.animate .char:before {
-    transform: translateY(-45%) scaleY(0);
-  }
-  &.animate .char:after {
-    transform: translateY(45%) scaleY(0);
-  }
-  &.animate {
-    .char,
-    .char:before,
-    .char:after {
-      transition-delay: calc(0.5s * var(--char-percent));
-    }
+  &.animate .char {
+    transform: rotateX(0deg) scale(1) translate(0px, 0px);
   }
 }
 

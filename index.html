@@ -14,23 +14,32 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://mdriaz.ml/" />
-    <meta property="og:title" content="- Responsive HTML5 Portfolio" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Responsive HTML5 Portfolio" />
     <meta
       property="og:description"
       content="This is framwork less animated portfolio site"
     />
-    <meta property="og:image" content="" />
+    <meta property="og:image" content="preview.jpg" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://mdriaz.ml/" />
+    <meta property="twitter:url" content="" />
     <meta property="twitter:title" content="- Responsive HTML5 Portfolio" />
     <meta
       property="twitter:description"
       content="This is framwork less animated portfolio site"
     />
-    <meta property="twitter:image" content="" />
+    <meta property="twitter:image" content="preview.jpg" />
+    <!-- Dynamic meta url set -->
+    <script>
+      document
+        .querySelector("meta[property='og:url']")
+        .setAttribute("content", document.location);
+      document
+        .querySelector("meta[property='twitter:url']")
+        .setAttribute("content", document.location);
+    </script>
 
     <!-- Splitting CSS -->
     <link rel="stylesheet" href="css/splitting.css" />
@@ -49,29 +58,29 @@
           <li><a href="pages/contact.html" title="Contact">contact</a></li>
         </nav>
       </header>
-      <main class="flex-grow-1">
+      <main>
         <section class="portfolio_slider">
           <ul class="portfolio_slider_images">
             <li style="background-image: url(images/portfolio/wake-up.jpg);">
-              <h1 class="zip-it" data-splitting>Wakey wake</h1>
+              <h1 class="slide-in" data-splitting>Wakey wake</h1>
             </li>
             <li style="background-image: url(images/portfolio/blue-bag.jpg);">
-              <h1 class="zip-it" data-splitting>Saints Bag</h1>
+              <h1 class="slide-in" data-splitting>Saints Bag</h1>
             </li>
             <li style="background-image: url(images/portfolio/face-side.jpg);">
-              <h1 class="zip-it" data-splitting>67 Jewelry</h1>
+              <h1 class="slide-in" data-splitting>67 Jewelry</h1>
             </li>
             <li
               style="background-image: url(images/portfolio/yellow-book.jpg);"
             >
-              <h1 class="zip-it" data-splitting>Nasty Paper</h1>
+              <h1 class="slide-in" data-splitting>Nasty Paper</h1>
             </li>
             <li style="background-image: url(images/portfolio/vui.jpg);">
-              <h1 class="zip-it" data-splitting>Pluch</h1>
+              <h1 class="slide-in" data-splitting>Pluch</h1>
             </li>
 
             <li style="background-image: url(images/portfolio/logo-a.jpg);">
-              <h1 class="zip-it" data-splitting>Vpside down</h1>
+              <h1 class="slide-in" data-splitting>Vpside down</h1>
             </li>
           </ul>
           <ul class="portfolio_slider_navigation">
@@ -89,6 +98,6 @@
     <script src="js/splitting.min.js"></script>
     <script defer src="js/typed.js@2.0.11"></script>
     <!-- Main Script-->
-    <script defer src="js/main.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
