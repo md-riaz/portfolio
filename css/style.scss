@@ -295,11 +295,16 @@ nav.main-nav {
 #work-details {
   text-align: center;
   h1 {
-    font-size: 7rem;
+    @media #{$tablet} {
+      font-size: 7rem;
+    }
     margin: 40px auto;
   }
   p {
-    max-width: 500px;
+    @media #{$tablet} {
+      max-width: 60%;
+    }
+    width: 100%;
     margin: 40px auto;
   }
   img {

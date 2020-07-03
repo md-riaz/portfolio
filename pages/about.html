@@ -81,25 +81,30 @@
                     <table class="table">
                       <tr>
                         <td><strong>Age</strong></td>
-                        <td>26</td>
+                        <td class="ageYear">age will be inserted via JS</td>
                       </tr>
                       <tr>
                         <td><strong>Position</strong></td>
-                        <td>Entrepeneur</td>
+                        <td>Web Design/Developer</td>
                       </tr>
                       <tr>
                         <td><strong>Base</strong></td>
-                        <td>Brooklyn, NY</td>
+                        <td>Bogura, BD</td>
                       </tr>
                       <tr>
-                        <td><strong>Awards</strong></td>
-                        <td>3 Awwwards <br />1 Webby Award</td>
+                        <td><strong>Education</strong></td>
+                        <td>Computer Engineer (Diploma) <br />SSC</td>
                       </tr>
                       <tr>
                         <td><strong>Active on</strong></td>
                         <td>
-                          <a href="#">LinkedIn</a><a href="#">Twitter</a
-                          ><a href="#">Dribbble</a><a href="#">Behance</a>
+                          <a href="https://github.com/md-riaz">GitHub</a>
+                          <a href="https://web.facebook.com/mdriaz.wd"
+                            >Facebook</a
+                          >
+                          <a href="https://twitter.com/MDRiaz53949149"
+                            >Twitter</a
+                          >
                         </td>
                       </tr>
                     </table>
@@ -109,44 +114,53 @@
                 <div>
                   <div id="sticky-holder">
                     <h1 class="plop-it" data-splitting>
-                      Born in Madrid and now living in Brooklyn, New York. Ben
-                      Bryden is an entrepeneur who enables the possibilities of
-                      your brand in a meaningful and aesthetic way.
+                      Born in Bogura and now living in Bogura, Bangladesh. I am
+                      a Web Designer/Developer, who can make your design vision
+                      into live website .
                     </h1>
                     <p>
-                      When you starting a company you are thinking on how to cut
-                      expenses. One of such options to cut the startup costs is
-                      a company logo design. But is it good idea to order a
-                      cheap logo or work without company logo at all?
+                      Turn your visual design ideas to life with some
+                      creativity. I make the visual to be more interactive.
+                      Working with brave clients to inspire people through
+                      simple, meaningful design. It's what I believe in. I
+                      create digital products for humans.
                     </p>
                     <p>
-                      Logo represents company’s identity. First impression is
-                      made by logo or its absence. To know the importance of a
-                      logo just answer one question: “How many big, leading and
-                      famous companies don’t have logos?” If you company doesn’t
-                      have a logo this can raise doubts and negative thoughts.
-                      If logo was made by non-professional designer or made by
-                      owner of the company it is sometimes worse than no logo at
-                      all.
+                      My job is to build your website so that it is functional
+                      and user-friendly but at the same time attractive.
+                      Moreover, I add a personal touch to your product and make
+                      sure that it is eye-catching and easy to use. My aim is to
+                      bring across your message and identity in the most
+                      creative way.
                     </p>
                     <p>
-                      One of the popular questions is – why my logo should be
-                      custom? If logo is created with the use of a clipart
-                      (premade graphic elements from the public collections) it
-                      may look like or be identical to other logos and even your
-                      competitors’ logos. This will make identification of your
-                      company difficult or your logo may be easily mixed up with
-                      logo of another company. This situation may harm your
-                      reputation and money invested in marketing of your brand
-                      will be wasted. Good company logo reflects the main point
-                      of your company, its values and helps in successful
-                      development of the business. Also, it is important to
-                      distinguish the logo design for big companies and
-                      start-ups. Logo for the big company may consist only of a
-                      one graphic element (Nike swoosh) and it will be easily
-                      identifiable but for small company such logo is a bad idea
-                      because you will need to spent huge amounts of money to
-                      promote it.
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Excepturi dolore distinctio nesciunt rerum! Eum, quas?
+                      Repellendus, sit. Nobis ducimus ut modi quis ab? Nobis
+                      omnis excepturi, iste voluptatum illo velit autem,
+                      corporis ut perferendis libero alias, maxime ex vero
+                      possimus blanditiis? Voluptatibus esse saepe nobis velit
+                      voluptate ipsam vero maxime, dolore magni deserunt,
+                      praesentium deleniti repellat odio quis in omnis nostrum
+                      pariatur officia atque laboriosam fugiat, culpa suscipit.
+                      Cum facilis quaerat harum ad quas. Nostrum laudantium quia
+                      eius iusto sunt. Consequatur, voluptates. Iusto adipisci
+                      eos pariatur perspiciatis, laborum optio explicabo, esse
+                      tempora nostrum laboriosam, autem odio alias. Quos minus
+                      ullam amet porro ratione, consequuntur cumque velit quae
+                      laboriosam autem tenetur fugiat nulla dignissimos dolores
+                      itaque aperiam unde vero inventore nisi eum molestias
+                      labore modi! Magni labore quo voluptas atque vero delectus
+                      in, repellat sit fugiat modi consequuntur rerum vel
+                      architecto quidem dolorum velit adipisci doloribus eius
+                      corporis. Ut, ipsam. Eveniet enim assumenda illum aliquid
+                      suscipit rerum necessitatibus obcaecati, dicta facilis
+                      eius natus vero, blanditiis molestias sapiente voluptatem
+                      aperiam laborum? Vel ipsa autem nisi perspiciatis porro
+                      sed blanditiis et maiores ducimus rem molestias minus
+                      rerum explicabo, nesciunt quod eaque consequuntur numquam
+                      consectetur asperiores unde nam cumque ullam? Porro non
+                      laudantium alias?
                     </p>
                   </div>
                 </div>
@@ -171,5 +185,28 @@
     <script defer src="../js/typed.js@2.0.11"></script>
     <!-- Main Script-->
     <script defer src="../js/main.js"></script>
+    <script>
+      //Change ME
+      let DOB = "May 19, 1999";
+      let millisecondsBetweenDOBAnd1970 = Date.parse(DOB);
+      let millisecondsBetweenNowAnd1970 = Date.now();
+      let ageInMilliseconds =
+        millisecondsBetweenNowAnd1970 - millisecondsBetweenDOBAnd1970;
+      //--We will leverage Date.parse and now method to calculate age in milliseconds refer here https://www.w3schools.com/jsref/jsref_parse.asp
+
+      let milliseconds = ageInMilliseconds;
+      let second = 1000;
+      let minute = second * 60;
+      let hour = minute * 60;
+      let day = hour * 24;
+      let month = day * 30;
+      /*using 30 as base as months can have 28, 29, 30 or 31 days depending a month in a year it itself is a different piece of comuptation*/
+      let year = day * 365;
+
+      //let the age conversion begin
+      let years = Math.round(milliseconds / year);
+
+      document.querySelector(".ageYear").innerHTML = years;
+    </script>
   </body>
 </html>

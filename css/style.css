@@ -299,11 +299,16 @@ nav.main-nav {
 #work-details {
   text-align: center; }
   #work-details h1 {
-    font-size: 7rem;
     margin: 40px auto; }
+    @media (min-width: 768px) {
+      #work-details h1 {
+        font-size: 7rem; } }
   #work-details p {
-    max-width: 500px;
+    width: 100%;
     margin: 40px auto; }
+    @media (min-width: 768px) {
+      #work-details p {
+        max-width: 60%; } }
   #work-details img {
     margin: 10px auto; }
 
