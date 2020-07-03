@@ -14,23 +14,32 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://mdriaz.ml/" />
-    <meta property="og:title" content="- Responsive HTML5 Portfolio" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Responsive HTML5 Portfolio" />
     <meta
       property="og:description"
       content="This is framwork less animated portfolio site"
     />
-    <meta property="og:image" content="" />
+    <meta property="og:image" content="preview.jpg" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://mdriaz.ml/" />
+    <meta property="twitter:url" content="" />
     <meta property="twitter:title" content="- Responsive HTML5 Portfolio" />
     <meta
       property="twitter:description"
       content="This is framwork less animated portfolio site"
     />
-    <meta property="twitter:image" content="" />
+    <meta property="twitter:image" content="preview.jpg" />
+    <!-- Dynamic meta url set -->
+    <script>
+      document
+        .querySelector("meta[property='og:url']")
+        .setAttribute("content", document.location);
+      document
+        .querySelector("meta[property='twitter:url']")
+        .setAttribute("content", document.location);
+    </script>
 
     <!-- Splitting CSS -->
     <link rel="stylesheet" href="css/splitting.css" />
