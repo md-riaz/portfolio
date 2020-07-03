@@ -617,11 +617,11 @@ nav > li {
   .char {
     overflow: hidden;
     color: transparent;
-    transform: translateY(18px);
+    transform: translateY(15px);
 
     &:before,
     &:after {
-      top: -18px;
+      top: -15px;
       visibility: visible;
       color: var(--clr-white);
       transition: transform 0.5s cubic-bezier(0.9, 0, 0.2, 1);
