@@ -11,7 +11,7 @@ window.onload = (e) => {
     ".portfolio_slider_navigation li"
   );
   const splitting = document.querySelectorAll("[data-splitting]");
-  const slideHorizontal = document.querySelectorAll(".slide-horizontal");
+  const slideIn = document.querySelectorAll(".slide-in");
   const typedEl = document.querySelector(".typed");
   const form = document.querySelector("#form");
   const Anchordelay = 500; // in milliseconds
@@ -33,16 +33,14 @@ window.onload = (e) => {
   });
 
   /* =========================
- Work page slider animation
-============================= */
+    Work page slider animation
+  ============================= */
   // Only trigger the fullscreen portfolio function when it's available
   if (fsSlides.length) {
     // set first element as active
     [...fsSlides][0].classList.add("active");
     [...fsSlidesLinks][0].classList.add("active");
-    setInterval(() => {
-      [...slideHorizontal][0].classList.add("animate");
-    }, 100);
+    setInterval(() => [...slideIn][0].classList.add("animate"), 100);
     // start image counting
     let CurrentImg = 1;
 
@@ -60,23 +58,14 @@ window.onload = (e) => {
     // slider class toogle
     function fsSlide(CurrentImg) {
       // remove all active class
-      [...fsSlides].forEach((el) => {
-        el.classList.remove("active");
-      });
-      [...fsSlidesLinks].forEach((el) => {
-        el.classList.remove("active");
-      });
-      [...slideHorizontal].forEach((el) => {
-        el.classList.remove("animate");
-      });
+      [...fsSlides].forEach((el) => el.classList.remove("active"));
+      [...fsSlidesLinks].forEach((el) => el.classList.remove("active"));
+      [...slideIn].forEach((el) => el.classList.remove("animate"));
 
       // add class on current item
       [...fsSlides][CurrentImg].classList.add("active");
       [...fsSlidesLinks][CurrentImg].classList.add("active");
-
-      setInterval(() => {
-        [...slideHorizontal][CurrentImg].classList.add("animate");
-      }, 1);
+      setInterval(() => [...slideIn][CurrentImg].classList.add("animate"), 1);
     }
   }
 

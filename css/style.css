@@ -577,34 +577,23 @@ nav > li {
           transform: matrix(1, 0, 0, 1, -50, -15); }
 
 /* splliting js animation */
-.slide-horizontal {
+.slide-in {
   padding-left: 10px;
-  padding-right: 10px; }
-  .slide-horizontal .char {
-    overflow: hidden;
-    color: transparent;
-    -webkit-transform: translateY(15px);
-            transform: translateY(15px); }
-    .slide-horizontal .char:before, .slide-horizontal .char:after {
-      top: -15px;
-      visibility: visible;
-      color: var(--clr-white);
-      -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.9, 0, 0.2, 1);
-      transition: -webkit-transform 0.5s cubic-bezier(0.9, 0, 0.2, 1);
-      transition: transform 0.5s cubic-bezier(0.9, 0, 0.2, 1);
-      transition: transform 0.5s cubic-bezier(0.9, 0, 0.2, 1), -webkit-transform 0.5s cubic-bezier(0.9, 0, 0.2, 1);
-      -webkit-transition-delay: calc(0.2s + (0.02s * (var(--char-index))));
-              transition-delay: calc(0.2s + (0.02s * (var(--char-index)))); }
-    .slide-horizontal .char:before {
-      color: var(--clr-black);
-      -webkit-transform: translateX(110%);
-              transform: translateX(110%); }
-  .slide-horizontal.animate .char:before {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%); }
-  .slide-horizontal.animate .char:after {
-    -webkit-transform: translateX(-110%);
-            transform: translateX(-110%); }
+  padding-right: 10px;
+  -webkit-perspective: 400px;
+          perspective: 400px; }
+  .slide-in .char {
+    -webkit-transform-origin: 0% 50%;
+            transform-origin: 0% 50%;
+    -webkit-transition: -webkit-transform 1s ease-out 0.1s;
+    transition: -webkit-transform 1s ease-out 0.1s;
+    transition: transform 1s ease-out 0.1s;
+    transition: transform 1s ease-out 0.1s, -webkit-transform 1s ease-out 0.1s;
+    -webkit-transform: rotateX(40deg) scale(0) translate(-50px, -29px);
+            transform: rotateX(40deg) scale(0) translate(-50px, -29px); }
+  .slide-in.animate .char {
+    -webkit-transform: rotateX(0deg) scale(1) translate(0px, 0px);
+            transform: rotateX(0deg) scale(1) translate(0px, 0px); }
 
 /*-----------------*/
 .plop-it {
