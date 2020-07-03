@@ -14,7 +14,7 @@ window.onload = (e) => {
   const slideIn = document.querySelectorAll(".slide-in");
   const typedEl = document.querySelector(".typed");
   const form = document.querySelector("#form");
-  const Anchordelay = 500; // in milliseconds
+  const anchorDelay = 500; // in milliseconds
   const fsSlideDelay = 3000; // in milliseconds
 
   if (splitting.length) {
@@ -40,7 +40,8 @@ window.onload = (e) => {
     // set first element as active
     [...fsSlides][0].classList.add("active");
     [...fsSlidesLinks][0].classList.add("active");
-    setInterval(() => [...slideIn][0].classList.add("animate"), 100);
+    setTimeout(() => [...slideIn][0].classList.add("animate"), 100);
+
     // start image counting
     let CurrentImg = 1;
 
@@ -58,14 +59,14 @@ window.onload = (e) => {
     // slider class toogle
     function fsSlide(CurrentImg) {
       // remove all active class
+      [...slideIn].forEach((el) => el.classList.remove("animate"));
       [...fsSlides].forEach((el) => el.classList.remove("active"));
       [...fsSlidesLinks].forEach((el) => el.classList.remove("active"));
-      [...slideIn].forEach((el) => el.classList.remove("animate"));
 
       // add class on current item
       [...fsSlides][CurrentImg].classList.add("active");
       [...fsSlidesLinks][CurrentImg].classList.add("active");
-      setInterval(() => [...slideIn][CurrentImg].classList.add("animate"), 500);
+      setTimeout(() => [...slideIn][CurrentImg].classList.add("animate"), 100);
     }
   }
 
@@ -118,9 +119,9 @@ window.onload = (e) => {
           el.style.opacity = 0;
         });
         // go to href page after delay
-        setInterval(() => {
+        setTimeout(() => {
           window.location = href;
-        }, Anchordelay);
+        }, anchorDelay);
       });
     }
   });
