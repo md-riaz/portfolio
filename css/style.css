@@ -143,11 +143,8 @@ header {
 
 /* Navigations */
 nav.main-nav {
-  margin-top: 10px;
+  margin: 25px -15px 0;
   padding: 0; }
-  @media (min-width: 768px) {
-    nav.main-nav {
-      margin: 25px -15px 0; } }
   nav.main-nav li {
     display: inline-block;
     margin: 0 9px;

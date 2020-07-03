@@ -143,10 +143,8 @@ header {
 }
 /* Navigations */
 nav.main-nav {
-  @media #{$tablet} {
-    margin: 25px -15px 0;
-  }
-  margin-top: 10px;
+  margin: 25px -15px 0;
+
   padding: 0;
   li {
     display: inline-block;

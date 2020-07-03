@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Riaz - Startup Agency</title>
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="- Responsive HTML5 Portfolio" />
+    <meta
+      name="description"
+      content="This is framwork less animated portfolio site"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="- Responsive HTML5 Portfolio" />
+    <meta
+      property="og:description"
+      content="This is framwork less animated portfolio site"
+    />
+    <meta property="og:image" content="../../preview.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="" />
+    <meta property="twitter:title" content="Responsive HTML5 Portfolio" />
+    <meta
+      property="twitter:description"
+      content="This is framwork less animated portfolio site"
+    />
+    <meta property="twitter:image" content="../../preview.jpg" />
+    <!-- Dynamic meta url set -->
+    <script>
+      document
+        .querySelector("meta[property='og:url']")
+        .setAttribute("content", document.location);
+      document
+        .querySelector("meta[property='twitter:url']")
+        .setAttribute("content", document.location);
+    </script>
+
+    <!-- Splitting CSS -->
+    <!-- <link rel="stylesheet" href="css/splitting.css" />
+    <link rel="stylesheet" href="css/splitting-cells.css" /> -->
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body>
+    <section class="container-fluid">
+      <header>
+        <a href="/" class="brand">
+          <img src="../../images/logo.png" alt="brand"
+        /></a>
+        <nav class="main-nav">
+          <li><a href="/" title="Work" class="active">Work</a></li>
+          <li>
+            <a href="" title="About">about</a>
+          </li>
+          <li>
+            <a href="" title="Blog">blog</a>
+          </li>
+          <li>
+            <a href="" title="Contact">contact</a>
+          </li>
+        </nav>
+      </header>
+      <main id="work-details">
+        <section class="container-fluid">
+          <div class="content">
+            <h1 class="plop-it" data-splitting>Startup Agency</h1>
+            <p class="plop-it" data-splitting>
+              Startup Agency is a free template. Startup Agency is a HTML5
+              template specially designed Creative agency, Digital agency,
+              Creative Protfolio, Start-up and related any business and much
+              more.
+            </p>
+          </div>
+        </section>
+        <section class="content">
+          <a href="https://startuper.ml/">
+            <img
+              class="shadow"
+              alt="Project"
+              src="../../images/portfolio/single/startup_1.jpg"
+            />
+          </a>
+          <img
+            class="shadow"
+            alt="Project"
+            src="../../images/portfolio/single/startup_2.jpg"
+          />
+          <img
+            class="shadow"
+            alt="Project"
+            src="../../images/portfolio/single/startup_3.jpg"
+          />
+          <img
+            class="shadow"
+            alt="Project"
+            src="../../images/portfolio/single/startup_4.jpg"
+          />
+          <img
+            class="shadow"
+            alt="Project"
+            src="../../images/portfolio/single/startup_full.jpg"
+          />
+        </section>
+      </main>
+    </section>
+    <!-- Typed.js and splitting.js -->
+    <script src="../../js/splitting.min.js"></script>
+    <script defer src="../../js/typed.js@2.0.11"></script>
+    <!-- Main Script-->
+    <script defer src="../../js/main.js"></script>
+  </body>
+</html>
