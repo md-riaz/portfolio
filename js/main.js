@@ -65,10 +65,7 @@ window.onload = (e) => {
       // add class on current item
       [...fsSlides][CurrentImg].classList.add("active");
       [...fsSlidesLinks][CurrentImg].classList.add("active");
-      setInterval(
-        () => [...slideIn][CurrentImg].classList.add("animate"),
-        1000
-      );
+      setInterval(() => [...slideIn][CurrentImg].classList.add("animate"), 500);
     }
   }
 
