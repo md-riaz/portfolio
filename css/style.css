@@ -376,12 +376,13 @@ nav.main-nav {
     #about #sticky.sticky {
       position: fixed;
       width: 26.5%; } }
-  #about h4 {
-    font-family: var(--f-Poppins);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-top: 65px;
-    margin-bottom: 10px; }
+
+h4 {
+  font-family: var(--f-Poppins);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 65px;
+  margin-bottom: 10px; }
 
 .title {
   text-align: center;
