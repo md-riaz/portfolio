@@ -13,7 +13,7 @@ window.onload = (e) => {
   const splitting = document.querySelectorAll("[data-splitting]");
   const slideIn = document.querySelectorAll(".slide-in");
   const typedEl = document.querySelector(".typed");
-  const form = document.querySelector("#form");
+  // const form = document.querySelector("#form");
   const anchorDelay = 500; // in milliseconds
   const fsSlideDelay = 3000; // in milliseconds
 
@@ -149,37 +149,37 @@ window.onload = (e) => {
   /* =========================
     form submit
 ============================= */
-  if (form) {
-    form.addEventListener("submit", handleForm);
-    function handleForm(ev) {
-      ev.preventDefault(); //stop the page reloading
-      let formData = new FormData(form);
+  // if (form) {
+  //   form.addEventListener("submit", handleForm);
+  //   function handleForm(ev) {
+  //     ev.preventDefault(); //stop the page reloading
+  //     let formData = new FormData(form);
 
-      //add more things that were not in the form
-      // formData.append("api-key", "myApiKey");
+  //     //add more things that were not in the form
+  //     // formData.append("api-key", "myApiKey");
 
-      // look at all the contents
-      for (let key of formData.keys()) {
-        console.log(key, formData.get(key));
-      }
+  //     // look at all the contents
+  //     for (let key of formData.keys()) {
+  //       console.log(key, formData.get(key));
+  //     }
 
-      //send the request with formData
-      let url = form.getAttribute("action");
-      let method = form.getAttribute("method");
-      let req = new Request(url, {
-        body: formData,
-        method: method,
-      });
+  //     //send the request with formData
+  //     let url = form.getAttribute("action");
+  //     let method = form.getAttribute("method");
+  //     let req = new Request(url, {
+  //       body: formData,
+  //       method: method,
+  //     });
 
-      fetch(req)
-        .then((res) => {
-          return res.json();
-        })
-        .then((data) => {
-          console.log("response from server", data);
-          document.querySelector(".response").innerHTML = data;
-        })
-        .catch(console.warn);
-    }
-  }
+  //     fetch(req)
+  //       .then((res) => {
+  //         return res.json();
+  //       })
+  //       .then((data) => {
+  //         console.log("response from server", data);
+  //         document.querySelector(".response").innerHTML = data;
+  //       })
+  //       .catch(console.warn);
+  //   }
+  // }
 };
