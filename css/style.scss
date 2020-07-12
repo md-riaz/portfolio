@@ -231,6 +231,18 @@ nav.main-nav {
         }
       }
     }
+    .context {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      span {
+        background-color: var(--clr-black);
+        color: var(--clr-white);
+        padding: 0px 10px;
+        border-radius: 20px;
+        letter-spacing: 1px;
+      }
+    }
     h1 {
       @media #{$desktop} {
         font-size: 10rem;
@@ -306,6 +318,14 @@ nav.main-nav {
   }
   img {
     margin: 10px auto;
+  }
+  .links {
+    margin-bottom: 20px;
+    a {
+      font-weight: bold;
+      margin: 10px;
+      vertical-align: middle;
+    }
   }
 }
 /*------- About Page -------*/
