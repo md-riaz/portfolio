@@ -453,6 +453,7 @@ h4 {
   img {
     position: relative;
     z-index: 1;
+    width: 100%;
   }
   .info {
     position: relative;
@@ -527,6 +528,7 @@ footer .pagination {
       color: var(--clr-white);
       padding: 13px 26px;
       line-height: 3.2;
+      margin: -2px;
       &.active,
       &:hover {
         background: var(--clr-black-6);
