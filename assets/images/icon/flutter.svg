@@ -1,0 +1,30 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+	<title>photoshop-svg</title>
+	<defs>
+		<linearGradient id="g1" x1="237.7" y1="406.7" x2="290" y2="425.5" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#000000"/>
+			<stop offset="1" stop-color="#000000" stop-opacity="0"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { fill: #47c5fb } 
+		.s1 { fill: #00569e } 
+		.s2 { fill: #00b5f8 } 
+		.s3 { opacity: .8;fill: url(#g1) } 
+	</style>
+	<g id="Folder 2">
+		<g id="Layer">
+			<g id="Layer">
+			</g>
+			<g id="Layer">
+			</g>
+			<g id="Folder 1">
+			</g>
+			<path id="Layer" class="s0" d="m455 0l-336.5 336.5-79.5-79.6 256.9-256.9z"/>
+			<path id="Layer" class="s0" d="m455 237l-139.2 139.2-79.4 79.3-79.8-81 137.6-137.5z"/>
+			<path id="Layer" class="s1" d="m315.8 376.2l139.2 139.8h-158.2l-60.4-60.5z"/>
+			<path id="Layer" class="s2" d="m155.7 375.4l79.5-79.5 80.6 80.3-79.4 79.3z"/>
+			<path id="Layer" class="s3" d="m309.1 382.9l-6.6 50.7-66.1 21.9z"/>
+		</g>
+	</g>
+</svg>
